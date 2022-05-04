@@ -13,7 +13,7 @@ jobs:
       - name: Clone upstream
         uses: actions/checkout@v2
         with:
-          repository: ${GIT_UPSTREAM_REPO}
+          repository: ${{ GIT_UPSTREAM_REPO }}
           path: ${CHECKER_SOURCE_DIR}
 
       - name: Install python
