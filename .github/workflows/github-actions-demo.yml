@@ -3,10 +3,14 @@ env:
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  fetch-upstream:
+  check-pytest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v3
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install python
+        uses: actions/setup-python@v3
         with:
           python-version: '3.9'
-      - run: pytest
+      - run: pip install pytest
+      - run: pytest check-tests --junit-xml=report.xml
