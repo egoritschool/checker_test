@@ -9,14 +9,18 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+
       - name: Clone upstream
         uses: actions/checkout@v2
-        repository: $GIT_UPSTREAM_REPO
-        path: $CHECKER_SOURCE_DIR
+        with:
+          repository: $GIT_UPSTREAM_REPO
+          path: $CHECKER_SOURCE_DIR
+
       - name: Install python
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'
+
       - run: pip install pytest
       - run: |
           pytest check-tests
