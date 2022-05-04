@@ -13,4 +13,7 @@ jobs:
         with:
           python-version: '3.9'
       - run: pip install pytest
-      - run: pytest check-tests --junit-xml=report.xml
+      - run: |
+          pytest check-tests
+          pytest check-tests --junit-xml=report.xml
+          cat report.xml
