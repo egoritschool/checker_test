@@ -22,16 +22,9 @@ def not_changed(path):
 
 @pytest.mark.skipif(not_changed('day1/task1.py'), reason='not updated')
 def test_task1():
-    from day1 import script
+    from day1 import task1
     with pytest.raises(ValueError):
-        script.method()
-
-
-@pytest.mark.skipif(not_changed('day1'), reason='not updated')
-def test_task1_other_test():
-    print('Output from the test')
-    assert [1,2,3] == [1,2]
-    pytest.fail('Should think before you type')
+        task1.method()
 
 
 @pytest.mark.skipif(not_changed('day1'), reason='not updated')
