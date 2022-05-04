@@ -1,2 +1,2 @@
 def method():
-    raise ValueError
+    ...
