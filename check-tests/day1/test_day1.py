@@ -5,8 +5,8 @@ import pytest
 
 
 def not_changed(path):
-    upstream_root = '/home/universe.dart.spb/efedorov/projects/school-crm/check_python/git-action/sample/upstream-repo'
-    fork_root = '/home/universe.dart.spb/efedorov/projects/school-crm/check_python/git-action/sample/fork'
+    upstream_root = os.environ.get('CHECKER_SOURCE_DIR', os.getcwd())
+    fork_root = os.environ.get('CHECKER_WORK_DIR', os.getcwd())
     upstream_path = os.path.join(upstream_root, path)
     fork_path = os.path.join(fork_root, path)
     if not os.path.exists(fork_path):
