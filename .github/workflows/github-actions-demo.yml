@@ -1,6 +1,6 @@
 env:
-  - CHECKER_SOURCE_DIR: upstream
-  - GIT_UPSTREAM_REPO: git@github.com:egoritschool/checker_test.git
+  CHECKER_SOURCE_DIR: upstream
+  GIT_UPSTREAM_REPO: git@github.com:egoritschool/checker_test.git
 name: GitHub Actions Demo
 on: [push]
 jobs:
