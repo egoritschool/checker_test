@@ -1,5 +1,6 @@
 env:
   - CHECKER_SOURCE_DIR: upstream
+  - GIT_UPSTREAM_REPO: git@github.com:egoritschool/checker_test.git
 name: GitHub Actions Demo
 on: [push]
 jobs:
@@ -10,10 +11,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Clone upstream
         uses: actions/checkout@v2
-        env:
-          - GIT_UPSTREAM_REPO: git@github.com:egoritschool/checker_test.git
-        run: |
-          git clone $GIT_UPSTREAM_REPO $CHECKER_SOURCE_DIR
+        repository: $GIT_UPSTREAM_REPO
+        path: $CHECKER_SOURCE_DIR
       - name: Install python
         uses: actions/setup-python@v3
         with:
