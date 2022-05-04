@@ -15,6 +15,7 @@ jobs:
         with:
           repository: ${{ env.GIT_UPSTREAM_REPO }}
           path: ${{ env.CHECKER_SOURCE_DIR }}
+          ref: main
           token: ${{ github.token }}
       - name: Install python
         uses: actions/setup-python@v3
